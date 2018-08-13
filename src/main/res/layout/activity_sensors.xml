@@ -1,0 +1,952 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="whitesun.telemetry.Sensors">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_alignParentBottom="false"
+        android:layout_above="@+id/btnStartLog">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/selecionedados"
+                android:id="@+id/textView3" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/selectall"
+                android:textStyle="bold"
+                android:id="@+id/cb_selectall"
+                android:checked="false" />
+
+        <View
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="@color/divisor" />
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/viewaccel"
+                android:visibility="visible"
+            android:baselineAligned="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/acelerometro"
+                    android:id="@+id/tv_accelerometer" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acx"
+                    android:id="@+id/cb_accx"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acy"
+                    android:id="@+id/cb_accy"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acz"
+                    android:id="@+id/cb_accz"
+                    android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+            </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:visibility="visible"
+                android:id="@+id/viewgravity" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/sensorgravidade"
+                    android:id="@+id/tv_gravity" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gravx"
+                    android:id="@+id/cb_gravx"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gravy"
+                    android:id="@+id/cb_gravy"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gravz"
+                    android:id="@+id/cb_gravz"
+                    android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:visibility="visible"
+                android:id="@+id/viewgyro">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/giroscopio"
+                    android:id="@+id/tv_gyroscope" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gyx"
+                    android:id="@+id/cb_gyrox"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gyy"
+                    android:id="@+id/cb_gyroy"
+                    android:checked="false" />
+
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gyz"
+                    android:id="@+id/cb_gyroz"
+                    android:checked="false" />
+
+                <View
+                    android:layout_height="1dp"
+                    android:layout_width="fill_parent"
+                    android:background="@color/divisor" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewgyrouncalibrated" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/giroscopionaocalibrado"
+                android:id="@+id/tv_gyrouncalibrated" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gyncx"
+                android:id="@+id/cb_gyrouncax"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gyncy"
+                android:id="@+id/cb_gyrouncay"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gyncz"
+                android:id="@+id/cb_gyrouncaz"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/driftx"
+                android:id="@+id/cb_driftx"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/drifty"
+                android:id="@+id/cb_drifty"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/driftz"
+                android:id="@+id/cb_driftz"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewlinearaccele" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/acelinear"
+                android:id="@+id/tv_linacc" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/linaccx"
+                android:id="@+id/cb_linaccx"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/linaccy"
+                android:id="@+id/cb_linaccy"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/linaccz"
+                android:id="@+id/cb_linaccz"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewvetorrotacao" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/vetorrotacao"
+                android:id="@+id/tv_vetorrotacao" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rotvecx"
+                android:id="@+id/cb_verotx"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rotvecy"
+                android:id="@+id/cb_veroty"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rotvecz"
+                android:id="@+id/cb_verotz"
+                android:checked="false" />
+
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewstepcounter" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/contadorpassos"
+                android:id="@+id/tv_stepcounter" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stepscounter"
+                android:id="@+id/cb_numbersteps"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewGameRotationVector" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/vetorrotacaojogos"
+                android:id="@+id/tv_gameRotationVector" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rotvecgamex"
+                android:id="@+id/cb_gameRotVecX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rotvecgamey"
+                android:id="@+id/cb_gameRotVecY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rotvecgamez"
+                android:id="@+id/cb_gameRotVecZ"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewGeomagneticRotationVector" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/vetorrotacaogeomagnetico"
+                android:id="@+id/tv_geomagneticRotationVector" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/geomagrotvecx"
+                android:id="@+id/cb_geoRotVecX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/geomagrotvecy"
+                android:id="@+id/cb_geoRotVecY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/geomagrotvecz"
+                android:id="@+id/cb_geoRotVecZ"
+                android:checked="false" />
+
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewMagneticField" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/campomagnetico"
+                android:id="@+id/tv_magneticField" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magneticfieldx"
+                android:id="@+id/cb_magneticFieldX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magneticfieldy"
+                android:id="@+id/cb_magneticFieldY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magneticfieldx"
+                android:id="@+id/cb_magneticFieldZ"
+                android:checked="false" />
+
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewMagneticFieldUncalibrated" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/campomagneticonaocalibrado"
+                android:id="@+id/tv_magneticFieldUncalibrated" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magneticfielduncalibratedx"
+                android:id="@+id/cb_magneticFieldUncalibratedX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magneticfielduncalibratedy"
+                android:id="@+id/cb_magneticFieldUncalibratedY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/magneticfielduncalibratedz"
+                android:id="@+id/cb_magneticFieldUncalibratedZ"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ironbiasestimationx"
+                android:id="@+id/cb_ironBiasX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ironbiasestimationy"
+                android:id="@+id/cb_ironBiasY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ironbiasestimationz"
+                android:id="@+id/cb_ironBiasZ"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewOrientation" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/orientacao"
+                android:id="@+id/tv_orientation" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/orientationx"
+                android:id="@+id/cb_orientationX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/orientationy"
+                android:id="@+id/cb_orientationY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/orientationz"
+                android:id="@+id/cb_orientationZ"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewProximity" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/proximidade"
+                android:id="@+id/tv_proximity" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/proximitydistance"
+                android:id="@+id/cb_proximity"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewAmbientTemperature" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/ambienttemperaturesens"
+                android:id="@+id/tv_ambientTemperature" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ambienttemperature"
+                android:id="@+id/cb_ambientTemperature"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewLightSensor" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/lightsens"
+                android:id="@+id/tv_lightSensor" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/illuminance"
+                android:id="@+id/cb_illuminance"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewPressure" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/pressuresens"
+                android:id="@+id/tv_pressureSensor" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pressure"
+                android:id="@+id/cb_pressure"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewRelativeHumidity" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/relativehumiditysens"
+                android:id="@+id/tv_relativeHumidity" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/relativehumidity"
+                android:id="@+id/cb_relativeHumidity"
+                android:checked="false" />
+
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewDeviceTemperature" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/devicetemperaturesens"
+                android:id="@+id/tv_deviceTemperature" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/devicetemperature"
+                android:id="@+id/cb_deviceTemperature"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+       <!-- <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewSoundSensor" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/soundsens"
+                android:id="@+id/tv_soundSensor" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/intensidadesonora"
+                android:id="@+id/cb_sound"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible"
+            android:id="@+id/viewGps" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/gps"
+                android:id="@+id/tv_gps" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/latitude"
+                android:id="@+id/cb_latitude"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/longitude"
+                android:id="@+id/cb_longitude"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/speed"
+                android:id="@+id/cb_speed"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/altitude"
+                android:id="@+id/cb_altitude"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cog"
+                android:id="@+id/cb_cog"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/distX"
+                android:id="@+id/cb_distX"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/distY"
+                android:id="@+id/cb_distY"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/distTotal"
+                android:id="@+id/cb_distTotal"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/linearLayout"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/time"
+                android:id="@+id/textView" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/milliFromBegin"
+                android:id="@+id/cb_milliFromBegin"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentDay"
+                android:id="@+id/cb_day"
+                android:checked="false" />
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentMonth"
+                android:id="@+id/cb_month"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentYear"
+                android:id="@+id/cb_year"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentHour"
+                android:id="@+id/cb_hour"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentMinute"
+                android:id="@+id/cb_minute"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentSecond"
+                android:id="@+id/cb_second"
+                android:checked="false" />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/currentMillissecond"
+                android:id="@+id/cb_millisseconds"
+                android:checked="false" />
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/delayOnUpdate"
+                    android:id="@+id/textView2" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/et_dalay"
+                    android:text="50" />
+
+
+
+            </LinearLayout>
+            <View
+                android:layout_height="1dp"
+                android:layout_width="fill_parent"
+                android:background="@color/divisor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_logging"
+        android:id="@+id/btnStartLog"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

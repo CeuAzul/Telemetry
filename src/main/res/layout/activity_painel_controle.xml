@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="whitesun.telemetry.Sensors">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Geral"
+                android:id="@+id/btnGeral"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/aviaozin" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="GPS"
+                android:id="@+id/btnGPS"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/location71"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pitot"
+                android:id="@+id/btnPitot"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/delivery14"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="AGM"
+                android:id="@+id/btnAGM"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/location70"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Barômetro"
+                android:id="@+id/btnBarometro"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/pressure7"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tacômetro"
+                android:id="@+id/btnTacometro"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/boat53"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ultrassom"
+                android:id="@+id/btnUltrassom"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/wheels14"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Telecomandos"
+            android:id="@+id/btnTelecomandos"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:drawableTop="@drawable/transport912" />
+
+    </LinearLayout>
+</RelativeLayout>

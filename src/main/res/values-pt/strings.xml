@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Telemetria</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Config</string>
+    <string name="nome">Telemetria</string>
+    <string name="comecaTelemetria">Iniciar</string>
+    <string name="title_activity_sensors">Telemetria</string>
+    <string name="selecionedados">Selecione os dados para gravar:</string>
+
+    <string name="acelerometro">Acelerômetro</string>
+    <string name="giroscopio">Giroscópio</string>
+    <string name="giroscopionaocalibrado">Giroscópio não-calibrado</string>
+    <string name="sensorgravidade">Sensor de força gravitacional</string>
+    <string name="acelinear">Aceleração Linear</string>
+    <string name="vetorrotacao">Sensor do vetor de rotação</string>
+    <string name="contadorpassos">Contador de passos</string>
+    <string name="vetorrotacaojogos">Sensor do vetor de rotação para jogos</string>
+    <string name="vetorrotacaogeomagnetico">Sensor do vetor de rotação geomagnético</string>
+    <string name="campomagnetico">Sensor de campo magnético</string>
+    <string name="campomagneticonaocalibrado">Sensor de campo magnético não-calibrado</string>
+    <string name="orientacao">Sensor de orientação</string>
+    <string name="proximidade">Sensor de proximidade</string>
+    <string name="ambienttemperaturesens">Termômetro externo</string>
+    <string name="lightsens">Sensor de luz</string>
+    <string name="pressuresens">Sensor de pressão</string>
+    <string name="relativehumiditysens">Sensor de humidade</string>
+    <string name="devicetemperaturesens">Termômetro interno</string>
+    <string name="soundsens">Sensor de som</string>
+    <string name="gps">GPS</string>
+
+    <string name="acx">Aceleração X (m/s²)</string>
+    <string name="acy">Aceleração Y (m/s²)</string>
+    <string name="acz">Aceleração Z (m/s²)</string>
+
+    <string name="gyx">Velocidade angular em X (rad/s)</string>
+    <string name="gyy">Velocidade angular em Y (rad/s)</string>
+    <string name="gyz">Velocidade angular em Z (rad/s)</string>
+
+    <string name="gyncx">Velocidade angular (Sem compensação de drift) em X  (rad/s)</string>
+    <string name="gyncy">Velocidade angular (Sem compensação de drift) em Y  (rad/s)</string>
+    <string name="gyncz">Velocidade angular (Sem compensação de drift) em Z  (rad/s)</string>
+    <string name="driftx">Drift no eixo X  (rad/s)</string>
+    <string name="drifty">Drift no eixo Y  (rad/s)</string>
+    <string name="driftz">Drift no eixo Z  (rad/s)</string>
+
+    <string name="gravx">Força gravitacional em X (m/s²)</string>
+    <string name="gravy">Força gravitacional em Y (m/s²)</string>
+    <string name="gravz">Força gravitacional em Z (m/s²)</string>
+
+    <string name="linaccx">Aceleração linear em X (m/s²)</string>
+    <string name="linaccy">Aceleração linear em Y (m/s²)</string>
+    <string name="linaccz">Aceleração linear em Z (m/s²)</string>
+
+    <string name="rotvecx">Vetor de rotação em X (adimensional)</string>
+    <string name="rotvecy">Vetor de rotação em Y (adimensional)</string>
+    <string name="rotvecz">Vetor de rotação em Z (adimensional)</string>
+
+    <string name="stepscounter">Número de passos (passos)</string>
+
+    <string name="rotvecgamex">Vetor de rotação em X (adimensional)</string>
+    <string name="rotvecgamey">Vetor de rotação em Y (adimensional)</string>
+    <string name="rotvecgamez">Vetor de rotação em Z (adimensional)</string>
+
+    <string name="geomagrotvecx">Vetor de rotação em X (adimensional)</string>
+    <string name="geomagrotvecy">Vetor de rotação em Y (adimensional)</string>
+    <string name="geomagrotvecz">Vetor de rotação em Z (adimensional)</string>
+
+    <string name="magneticfieldx">Campo magnético em X (μT)</string>
+    <string name="magneticfieldy">Campo magnético em Y (μT)</string>
+    <string name="magneticfieldz">Campo magnético em Z (μT)</string>
+
+    <string name="magneticfielduncalibratedx">Campo magnético (Sem calibração) em X (μT)</string>
+    <string name="magneticfielduncalibratedy">Campo magnético (Sem calibração) em Y (μT)</string>
+    <string name="magneticfielduncalibratedz">Campo magnético (Sem calibração) em Z (μT)</string>
+    <string name="ironbiasestimationx">Enviesamento férrico (iron bias) em X (μT)</string>
+    <string name="ironbiasestimationy">Enviesamento férrico (iron bias) em Y (μT)</string>
+    <string name="ironbiasestimationz">Enviesamento férrico (iron bias) Z (μT)</string>
+
+    <string name="orientationx">Yaw (Graus)</string>
+    <string name="orientationy">Pitch (Graus)</string>
+    <string name="orientationz">Roll (Graus)</string>
+
+    <string name="proximitydistance">Distância (cm)</string>
+
+    <string name="ambienttemperature">Temperatura Ambiente (°C)</string>
+
+    <string name="illuminance">Iluminação (lx)</string>
+
+    <string name="pressure">Pressão do ar (hPa ou mbar)</string>
+
+    <string name="relativehumidity">Humidade relativa do ar (%)</string>
+
+    <string name="devicetemperature">Temperatura interna (°C)</string>
+
+    <string name="intensidadesonora">Intensidade sonora</string>
+
+    <string name="latitude">Latitude (Graus)</string>
+    <string name="longitude">Longitude (Graus)</string>
+    <string name="speed">Velocidade (m/s)</string>
+    <string name="altitude">Altitude (m)</string>
+    <string name="cog">Direção da velocidade (Graus)</string>
+    <string name="distX">Distância X do ponto de referência (m)</string>
+    <string name="distY">Distância Y do ponto de referência (m)</string>
+    <string name="distTotal">Distância total do ponto de referência (m)</string>
+    <string name="notLocked">-(Não travado)</string>
+    <string name="ready">-(Pronto!)</string>
+
+    <string name="time">Registrar tempo?</string>
+    <string name="milliFromBegin">Milissegundos percorridos (milissecs)</string>
+    <string name="currentDay">Dia atual (Dia)</string>
+    <string name="currentMonth">Mês atual (Mês)</string>
+    <string name="currentYear">Ano atual (Year)</string>
+    <string name="currentHour">Hora atual (Hora)</string>
+    <string name="currentMinute">Minuto atual (Minuto)</string>
+    <string name="currentSecond">Segundo atual (Segundo)</string>
+    <string name="currentMillissecond">Milissegundo atual (Milissec)</string>
+
+    <string name="delayOnUpdate">Milissegundos entre atualizações:</string>
+
+    <string name="start_logging">Iniciar log</string>
+    <string name="stopLog">Parar Registro</string>
+    <string name="loggedsucess">O registro foi um sucesso!   Texto criado na pasta "Telemetria"</string>
+    <string name="gostariadeativargps">GPS desligado. Gostaria de ativá-lo no menu de configurações?</string>
+    <string name="gpsnotdetected">GPS</string>
+    <string name="naoquerousargps">Não quero usar GPS</string>
+    <string name="configuracoes">Ir para configurações</string>
+    <string name="sucesso">Sucesso</string>
+    <string name="show">Maravilha!</string>
+    <string name="estacaoTerrestre">Estação terrestre</string>
+    <string name="velocidade">Velocidade</string>
+    <string name="altitudePressao">Altitude pressão</string>
+    <string name="comandoLocal">Comandos locais</string>
+    <string name="telecomando">Telecomandos</string>
+    <string name="title_activity_grafico">Grafico</string>
+    <string name="action_groundstation">Estação Terrestre</string>
+    <string name="action_privacypolitics">Política de privacidade</string>
+    <string name="selectall">Selecionar tudo</string>
+
+</resources>
