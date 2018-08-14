@@ -1,0 +1,1 @@
+include ':app', ':eventbus-2.4.0', ':achartengine-1.2.0'
