@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 
 
 
-    // Teste pra ver como funciona o git no Android Studio
+    // Teste pra ver como funciona o git no Android Studio awdadwd
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
