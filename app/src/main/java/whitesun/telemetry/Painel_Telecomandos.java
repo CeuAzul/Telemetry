@@ -25,7 +25,7 @@ public class Painel_Telecomandos extends Activity  implements View.OnClickListen
     private Button btnReinicia;
     private Button btnDesligaPlataforma;
     private EventBus bus = EventBus.getDefault();
-    boolean passou5 =false;
+    boolean ultrapassouBarreiras = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,29 +46,30 @@ public class Painel_Telecomandos extends Activity  implements View.OnClickListen
 
 
     public void onEvent(EventoTrocaDados evento) {
-        if (evento.getApelido().equals("nfx")){ //GPS
+        if (evento.getApelido().equals("nfx")) { // GPS
             rbGps.setRating(evento.getValor());
         }
-        if (evento.getApelido().equals("sin")){ //Modo de operação
-            tfModoOperacao.setText(""+evento.getValor());
-            if(evento.getValor() == 0){
+
+        if (evento.getApelido().equals("sin")) { // Modo de operação
+            tfModoOperacao.setText("" + evento.getValor());
+            if (evento.getValor() == 0){
                 tfDescricaoModo.setText("Aguarde...");
                 aguardando();
                 tbPausaTelemetria.setChecked(true);
-            }else if(evento.getValor() == 1){
+            } else if (evento.getValor() == 1) {
                 tfDescricaoModo.setText("Pronto! Aguardando comando.");
                 aguardando();
-            }else if(evento.getValor() == 2){
+            } else if (evento.getValor() == 2) {
                 tfDescricaoModo.setText("Transmitindo alguns dados...");
                 transmBasica();
-            }else if(evento.getValor() == 3){
+            } else if (evento.getValor() == 3) {
                 tfDescricaoModo.setText("Apenas transmitindo dados...");
                 transmApenas();
-            }else if(evento.getValor() == 4){
+            } else if (evento.getValor() == 4) {
                 tfDescricaoModo.setText("Gravando e transmitindo dados...");
                 gravando();
-            }else{
-
+            } else {
+                // Do nothing
             }
         }
     }
@@ -135,32 +136,32 @@ public class Painel_Telecomandos extends Activity  implements View.OnClickListen
 
         sbSegur.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                if(seekBar.getProgress() != seekBar.getMax()){
+            public void onStopTrackingTouch (SeekBar seekBar) {
+                if (seekBar.getProgress() != seekBar.getMax()) {
                     seekBar.setProgress(0);
-                    passou5 = false;
-                }else{
-                    if(passou5) {
+                    ultrapassouBarreiras = false;
+                } else {
+                    if (ultrapassouBarreiras) {
                         habilitaBotoes(true);
-                        passou5 = false;
-                    }else{
+                        ultrapassouBarreiras = false;
+                    } else {
                         seekBar.setProgress(0);
-                        passou5 = false;
+                        ultrapassouBarreiras = false;
                     }
                 }
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
+                // Do nothing
             }
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
-                if(seekBar.getProgress() != seekBar.getMax()){
+                if (seekBar.getProgress() != seekBar.getMax()) {
                     habilitaBotoes(false);
-                    if(seekBar.getProgress() == 1){
-                        passou5 = true;
+                    if (seekBar.getProgress() == 1) {
+                        ultrapassouBarreiras = true;
                     }
                 }
             }
@@ -184,10 +185,11 @@ public class Painel_Telecomandos extends Activity  implements View.OnClickListen
      * Auto-created on 2016-08-27 19:01:34 by Android Layout Finder
      * (http://www.buzzingandroid.com/tools/android-layout-finder)
      */
+
     @Override
     public void onClick(View v) {
         habilitaBotoes(false);
-        passou5 = false;
+        ultrapassouBarreiras = false;
         sbSegur.setProgress(0);
         if ( v == tbIniciaGravacao ) {
             EstacaoTerrestre.mandaDado("@t#c%$0#1$");
@@ -207,7 +209,4 @@ public class Painel_Telecomandos extends Activity  implements View.OnClickListen
             EstacaoTerrestre.mandaDado("d&y?%(+#((");
         }
     }
-
-
-
 }
