@@ -77,7 +77,6 @@ public class Grafico extends Activity {
             nome = evento.getApelido();
             valorAtual = evento.getValor();
             tempoAtual = evento.getTempoRecebimento();
-            System.out.println("Recebido pelo onEvent(): " + tempoAtual);
         }
     }
     private void setupChart(){
@@ -142,14 +141,13 @@ public class Grafico extends Activity {
         // Generates dummy data in a non-ui thread
         @Override
         protected Void doInBackground(Void... params) {
-            try{
+            try {
                 while(true) {
                     String ta[] = new String[2];
-                    System.out.println("Vendo do doInBackground(): "+getTempoAtual());
                     publishProgress(ta);
                     Thread.sleep(100);
                 }
-            }catch(Exception e){ }
+            } catch(Exception e){ }
             return null;
         }
 
@@ -158,35 +156,34 @@ public class Grafico extends Activity {
         protected void onProgressUpdate(String... values) {
             System.out.println("No onProgressUpdate(): Tempo atual: "+tempoAtual+" Anterior: "+tempoAnterior);
 
-            if(tempoAtual != tempoAnterior){
-                if(minX == -1){
+            if (tempoAtual != tempoAnterior) {
+                if (minX == -1) {
                     minX = tempoAtual;
                 }
-                if(maxX == -1){
+                if (maxX == -1) {
                     maxX = tempoAtual;
                 }
-                if(tempoAtual < minX){
+                if (tempoAtual < minX) {
                     minX = tempoAtual;
                     multiRenderer.setXAxisMin(minX);
                 }
-                if(tempoAtual > maxX){
+                if (tempoAtual > maxX) {
                     maxX = tempoAtual;
                     multiRenderer.setXAxisMax(maxX);
                 }
-                if(valorAtual > maxY){
+                if (valorAtual > maxY) {
                     maxY = valorAtual;
                     multiRenderer.setYAxisMax(maxY );
                 }
-                if(valorAtual < minY){
+                if (valorAtual < minY) {
                     minY = valorAtual;
                     multiRenderer.setYAxisMin(minY);
                 }
-                if(visitsSeries.getItemCount()>1200){
+                if (visitsSeries.getItemCount()>1200) {
                     visitsSeries.remove(0);
                 }
-                if(!tvNomeDado.getText().toString().equals(nome+" = "+valorAtual)){
-                    tvNomeDado.setText(nome+" = "+valorAtual);
-              //      multiRenderer.setChartTitle(nome);
+                if (!tvNomeDado.getText().toString().equals(nome + " = "+ valorAtual)) {
+                    tvNomeDado.setText(nome + " = " + valorAtual);
                     visitsSeries.setTitle(nome);
 
                 }

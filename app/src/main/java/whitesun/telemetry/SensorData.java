@@ -2,12 +2,6 @@ package whitesun.telemetry;
 
 import android.util.Log;
 
-/**
- * Created by Avell-G1711 on 03/08/2015.
- */
-
-
-
 public class SensorData {
     private float acx;
     private float acy;
@@ -133,15 +127,8 @@ public class SensorData {
 
 
 
-    public float getSoundIntensity() {
-        Log.d("SOM GET", soundIntensity+"");
-        return soundIntensity;
-    }
-
-    public void setSoundIntensity(float soundIntensity) {
-        Log.d("SOM SET", soundIntensity+"");
-        this.soundIntensity = soundIntensity;
-    }
+    public float getSoundIntensity() { return soundIntensity; }
+    public void setSoundIntensity(float soundIntensity) { this.soundIntensity = soundIntensity; }
 
 
 

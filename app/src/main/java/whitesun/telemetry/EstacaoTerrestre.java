@@ -75,8 +75,6 @@ public class EstacaoTerrestre extends MainActivity {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-
-
         }
     };
 
@@ -84,6 +82,10 @@ public class EstacaoTerrestre extends MainActivity {
     private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() { //Broadcast Receiver to automatically start and stop the Serial connection.
         @Override
         public void onReceive(Context context, Intent intent) {
+
+            Context toastContext = getApplicationContext();
+            int duration = Toast.LENGTH_SHORT;
+
             if (intent.getAction().equals(ACTION_USB_PERMISSION)) {
                 boolean granted = intent.getExtras().getBoolean(UsbManager.EXTRA_PERMISSION_GRANTED);
                 if (granted) {
@@ -98,22 +100,25 @@ public class EstacaoTerrestre extends MainActivity {
                             serialPort.setParity(UsbSerialInterface.PARITY_NONE);
                             serialPort.setFlowControl(UsbSerialInterface.FLOW_CONTROL_OFF);
                             serialPort.read(mCallback);
-                            logShow(tfLog,"Canal aberto!!");
+                            Toast toast = Toast.makeText(toastContext, "Port open!", duration);
+                            toast.show();
 
                         } else {
-                            Log.d("SERIAL", "PORT NOT OPEN");
+                            Toast toast = Toast.makeText(toastContext, "Port closed!", duration);
+                            toast.show();
                         }
                     } else {
-                        Log.d("SERIAL", "PORT IS NULL");
+                        Toast toast = Toast.makeText(toastContext, "Port is null!", duration);
+                        toast.show();
                     }
                 } else {
-                    Log.d("SERIAL", "PERM NOT GRANTED");
+                    Toast toast = Toast.makeText(toastContext, "Permission not granted!", duration);
+                    toast.show();
                 }
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)) {
                 inicializaUSB();
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_DETACHED)) {
                 paraConexao();
-
             }
         }
 
@@ -126,6 +131,7 @@ public class EstacaoTerrestre extends MainActivity {
      * Auto-created on 2016-03-19 03:19:51 by Android Layout Finder
      * (http://www.buzzingandroid.com/tools/android-layout-finder)
      */
+
     private void findViews() {
         svalorvelocidade = (TextView)findViewById( R.id.svalorvelocidade );
         tfAltitudePressao = (TextView)findViewById( R.id.tfAltitudePressao );
@@ -156,11 +162,8 @@ public class EstacaoTerrestre extends MainActivity {
 
         btnEnviaDados.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-             //   System.out.println("Retornou: " + protocolo.processaInput(etDadoPraEnviar.getText().toString()));
-
                 mandaDado(etDadoPraEnviar.getText().toString());
                 etDadoPraEnviar.setText("");
-
             }
         });
 
@@ -184,7 +187,6 @@ public class EstacaoTerrestre extends MainActivity {
                     }
                 });
                 builder.show();
-
             }
         });
 
@@ -192,7 +194,6 @@ public class EstacaoTerrestre extends MainActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(EstacaoTerrestre.this, Painel_Principal.class);
                 EstacaoTerrestre.this.startActivity(myIntent);
-
             }
         });
 
@@ -218,20 +219,14 @@ public class EstacaoTerrestre extends MainActivity {
             public void run() {
                 handler.post(new Runnable() {
                     public void run() {
-                   //     Random gerador = new Random();
-                   //     double numero = gerador.nextInt(10) + 10.5;
-                   //     double num2 = -1*gerador.nextInt(10);
-                   //     int wowr = gerador.nextInt(3);
-                    //    ultimoDadoRecebido = "!agr="+wowr+"@!sin="+wowr+"@!nfx="+wowr+"@!wow="+wowr+"@!vcs="+numero+"@!hps="+numero*100+"@!rpm="+numero*3.1415+"@!rpd="+numero*2.1415+"@!gpx="+numero*1.5+"@!gpy="+num2*2.1415+"@";
                         if(!ultimoDadoRecebido.equals("")) {
-                         //   etRawdata.append(ultimoDadoRecebido);
-                         //   System.out.println(numero);
                             ultimoDadoRecebido = protocolo.processaInput(ultimoDadoRecebido);
                         }
                     }
                 });
             }
         };
+
         timerProcessaDado.schedule(taskProcessaDado, 0, 100);
 
         final Handler handler2 = new Handler();
@@ -241,53 +236,46 @@ public class EstacaoTerrestre extends MainActivity {
             public void run() {
                 handler2.post(new Runnable() {
                     public void run() {
-                   //     System.out.println("Coisou "+ protocolo.dados.size());
                         etRawdata.setText("");
-                        if(protocolo.getDados().size() != 0){
+                        if (protocolo.getDados().size() != 0) {
                             btnVerGraficos.setEnabled(true);
-                        }else{
+                        } else {
                             btnVerGraficos.setEnabled(false);
                         }
+
                         for (int i = 0; i < protocolo.getDados().size(); i++) {
                             boolean taFocando = false;
-                            if(i == idApelidoSelecionado){
+                            if (i == idApelidoSelecionado) {
                                 taFocando = true;
                             }
 
                             float ultimoTempoRecebido =  protocolo.getDados().get(i).getTempoRecebimento().get(protocolo.getDados().get(i).getTempoRecebimento().size()-1);
                             System.out.println("Tempo enviado: "+ultimoTempoRecebido);
                             EventoTrocaDados evento = new EventoTrocaDados(protocolo.getDados().get(i).apelido, protocolo.getDados().get(i).getValores().get(protocolo.getDados().get(i).getValores().size()-1), ultimoTempoRecebido, taFocando);
-                        //    EventoTrocaDados evento = new EventoTrocaDados("vcs", numero, ultimoTempoRecebido, taFocando); // PRTOTIPAGEM
                             bus.post(evento);
 
-                  //          System.out.println("Coisou "+ protocolo.dados.size());
                             etRawdata.append("-"+protocolo.getDados().get(i).getValores().size()+"-");
-                            if(protocolo.getDados().get(i).apelido.equals("nda")){
+                            if (protocolo.getDados().get(i).apelido.equals("nda")) {
                                 svalorvelocidade.setText(": "+protocolo.getDados().get(i).getValores().get(protocolo.getDados().get(i).getValores().size()-1));
                             }
-                            if(protocolo.getDados().get(i).apelido.equals("agr")){
+                            if (protocolo.getDados().get(i).apelido.equals("agr")) {
                                 tfAltitudePressao.setText(": "+protocolo.getDados().get(i).getValores().get(protocolo.getDados().get(i).getValores().size()-1));
                             }
-                            if(protocolo.getDados().get(i).apelido.equals("igc")){
-                                if(protocolo.getDados().get(i).getValores().get(protocolo.getDados().get(i).getValores().size()-1) == 1){
+                            if (protocolo.getDados().get(i).apelido.equals("igc")) {
+                                if (protocolo.getDados().get(i).getValores().get(protocolo.getDados().get(i).getValores().size()-1) == 1) {
                                     btnGPSpronto.setChecked(true);
-                                }else{
+                                } else {
                                     btnGPSpronto.setChecked(false);
                                 }
                             }
-
                         }
-                       // etRawdata.setText("\n");
-
                     }
                 });
             }
         };
+
         timerMostraDado.schedule(taskMostraDado, 0, 100);
         setConectado(false);
-
-
-
 
     }
 
@@ -309,25 +297,20 @@ public class EstacaoTerrestre extends MainActivity {
                     device = null;
                 }
 
-                if (!keep)
+                if (!keep) {
                     break;
+                }
             }
         }
-
-
     }
 
     public static void mandaDado(String dado) {
         serialPort.write(dado.getBytes());
-        logShow(tfLog, "Pacote enviado com sucesso! - " + dado);
-
     }
 
     public void paraConexao() {
         setConectado(false);
         serialPort.close();
-        logShow(tfLog,"Comunicação encerrada.");
-
     }
 
     public void setConectado(boolean bool) {
@@ -341,9 +324,9 @@ public class EstacaoTerrestre extends MainActivity {
     private void dadoAppend(EditText tv, CharSequence text) {
         final EditText ftv = tv;
         final CharSequence ftext = text;
-        if(ftv.getText().length() == 9999){
+        if (ftv.getText().length() == 9999) {
             ftv.setText(ftext);
-        }else{
+        } else {
             ftv.append(ftext);
         }
     }
