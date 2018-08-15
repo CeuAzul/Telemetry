@@ -55,8 +55,6 @@ public class Painel_Graficos_geral extends Activity{
     float ultimoY = 0;
 
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,67 +82,54 @@ public class Painel_Graficos_geral extends Activity{
     protected void onDestroy() {
         // Unregister
         bus.unregister(this);
-   //     if (grafVcas.getChart() != null) {
-            grafVcas.getChart().cancel(true);
-     //   }
-    //    if (grafHps.getChart() != null) {
-            grafHps.getChart().cancel(true);
-    //    }
-    //    if (grafRpm1.getChart() != null) {
-            grafRpm1.getChart().cancel(true);
-    //    }
-    //    if (grafRpm2.getChart() != null) {
-            grafRpm2.getChart().cancel(true);
-    //    }
-   //     if (grafGPSxy.getChart() != null) {
-            grafGPSxy.getChart().cancel(true);
-    //    }
+        grafVcas.getChart().cancel(true);
+        grafHps.getChart().cancel(true);
+        grafRpm1.getChart().cancel(true);
+        grafRpm2.getChart().cancel(true);
+        grafGPSxy.getChart().cancel(true);
         super.onDestroy();
     }
 
 
     public void onEvent(EventoTrocaDados evento) {
         if (evento.getApelido().equals("nfx")){ //GPS
-            tvGpsStatus.setText("GPS St. :"+ evento.getValor()+"d");
+            tvGpsStatus.setText("GPS St. :" + evento.getValor() + "d");
         }
         if (evento.getApelido().equals("sin")){
-            tvModoOperacao.setText("Modo: "+ evento.getValor());
+            tvModoOperacao.setText("Modo: " + evento.getValor());
         }
         if (evento.getApelido().equals("wow")){
-            tvWow.setText("Wow: "+ evento.getValor());
+            tvWow.setText("Wow: " + evento.getValor());
         }
         if (evento.getApelido().equals("agr")){
-            tvEscritaCartao.setText("M:"+ evento.getValor());
+            tvEscritaCartao.setText("M:" + evento.getValor());
         }
         if (evento.getApelido().equals("vcs")){
             grafVcas.atualiza(evento.getTempoRecebimento(), evento.getValor());
         }
         if (evento.getApelido().equals("hps")){
-         //   System.out.println(evento.getTempoRecebimento()+" HPS "+evento.getValor());
             grafHps.atualiza(evento.getTempoRecebimento(), evento.getValor());
         }
         if (evento.getApelido().equals("rpm")){
-            //   System.out.println(evento.getTempoRecebimento()+" HPS "+evento.getValor());
             grafRpm1.atualiza(evento.getTempoRecebimento(), evento.getValor());
         }
         if (evento.getApelido().equals("rpd")){
-            //   System.out.println(evento.getTempoRecebimento()+" HPS "+evento.getValor());
             grafRpm2.atualiza(evento.getTempoRecebimento(), evento.getValor());
         }
         if (evento.getApelido().equals("gpx")){
             temX = true;
             ultimoX = evento.getValor();
-            if(temX && temY){
+            if (temX && temY) {
                 System.out.println("Atualizou gps");
                 temX = false;
                 temY = false;
                 grafGPSxy.atualiza(ultimoX, ultimoY);
             }
         }
-        if (evento.getApelido().equals("gpy")){
+        if (evento.getApelido().equals("gpy")) {
             temY = true;
             ultimoY = evento.getValor();
-            if(temX && temY){
+            if (temX && temY) {
                 System.out.println("Atualizou gps");
                 temX = false;
                 temY = false;
@@ -259,20 +244,17 @@ public class Painel_Graficos_geral extends Activity{
 
                 // Adding the Line Chart to the LinearLayout
                 chartContainer.addView(mChart);
-            }else{
+            } else {
                 // Creating an  XYSeries for Visits
                 visitsSeries = new XYSeries("Unique Visitors");
                 // Creating a dataset to hold each series
                 dataset = new XYMultipleSeriesDataset();
                 // Adding Visits Series to the dataset
                 dataset.addSeries(visitsSeries);
-
                 // Creating XYSeriesRenderer to customize visitsSeries
                 visitsRenderer = new XYSeriesRenderer();
-                //  visitsRenderer.setColor(Color.BLACK);
-                 visitsRenderer.setPointStyle(PointStyle.CIRCLE);
-                 visitsRenderer.setFillPoints(true);
-              //  visitsRenderer.setLineWidth(2);
+                visitsRenderer.setPointStyle(PointStyle.CIRCLE);
+                visitsRenderer.setFillPoints(true);
                 visitsRenderer.setDisplayChartValues(false);
 
 
@@ -314,10 +296,11 @@ public class Painel_Graficos_geral extends Activity{
 
         @TargetApi(Build.VERSION_CODES.HONEYCOMB) // API 11
         void startMyTask() {
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
                 chart.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-            else
+            else {
                 chart.execute();
+            }
         }
 
 
@@ -325,23 +308,18 @@ public class Painel_Graficos_geral extends Activity{
         private class ChartTask extends AsyncTask<Void, String, Void> {
             public float tempoAnterior = 0;
 
-
             // Generates dummy data in a non-ui thread
             @Override
             protected Void doInBackground(Void... params) {
                 try {
                     while (true) {
-                    //    System.out.println(tempoAtual+" "+nome+" "+valorAtual + "   ?   "+at);
-
-                    //    if(atualizou){
-
-                            String ta[] = new String[2];
-                            publishProgress(ta);
-                            atualizou = false;
-                            Thread.sleep(100);
-                     //   }
+                        String ta[] = new String[2];
+                        publishProgress(ta);
+                        atualizou = false;
+                        Thread.sleep(100);
                     }
                 } catch (Exception e) {
+                    // Do nothing
                 }
                 return null;
             }
@@ -349,8 +327,6 @@ public class Painel_Graficos_geral extends Activity{
             // Plotting generated data in the graph
             @Override
             protected void onProgressUpdate(String... values) {
-              //  System.out.println("No onProgressUpdate(): Tempo atual: " + tempoAtual + " Anterior: " + tempoAnterior);
-              //  System.out.println(tempoAtual+" "+nome+" "+valorAtual);
                 if(!isGps) {
                     if (tempoAtual != tempoAnterior) {
                         if (minX == -1) {
@@ -389,7 +365,7 @@ public class Painel_Graficos_geral extends Activity{
                         mChart.repaint();
                         tempoAnterior = tempoAtual;
                     }
-                }else {
+                } else {
                     if (minX == -1) {
                         minX = tempoAtual;
                     }
@@ -419,17 +395,13 @@ public class Painel_Graficos_geral extends Activity{
 
                     if (!tvNomeDado.getText().toString().equals(nome + " = " + absoluto)) {
                         tvNomeDado.setText(nome + " = " + valorAtual);
-                        //      multiRenderer.setChartTitle(nome);
                         visitsSeries.setTitle(nome);
-
                     }
                     visitsSeries.add(tempoAtual, valorAtual);
                     multiRenderer.getSeriesRendererAt(0).setColor(Color.parseColor("#E8660C"));
                     mChart.repaint();
                 }
-                }
             }
         }
-
-
     }
+}
