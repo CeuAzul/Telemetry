@@ -12,6 +12,7 @@ package whitesun.telemetry;
         import android.os.IBinder;
         import android.provider.Settings;
         import android.util.Log;
+        import android.widget.Toast;
 
 public class GPSTracker extends Service implements LocationListener {
 
@@ -56,12 +57,10 @@ public class GPSTracker extends Service implements LocationListener {
 
     public Location getLocation() {
         try {
-            locationManager = (LocationManager) mContext
-                    .getSystemService(LOCATION_SERVICE);
+            locationManager = (LocationManager) mContext.getSystemService(LOCATION_SERVICE);
 
             // getting GPS status
-            isGPSEnabled = locationManager
-                    .isProviderEnabled(LocationManager.GPS_PROVIDER);
+            isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
 
             if (!isGPSEnabled) {
@@ -74,10 +73,13 @@ public class GPSTracker extends Service implements LocationListener {
                                 LocationManager.GPS_PROVIDER,
                                 MIN_TIME_BW_UPDATES,
                                 MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                        Log.d("GPS Enabled", "GPS Enabled");
+                        Context toastContext = getApplicationContext();
+                        Toast toast = Toast.makeText(toastContext, "GPS enabled!", Toast.LENGTH_SHORT);
+                        toast.show();
+
                         if (locationManager != null) {
-                            location = locationManager
-                                    .getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
                             if (location != null) {
                                 latitude = location.getLatitude();
                                 longitude = location.getLongitude();
@@ -86,7 +88,6 @@ public class GPSTracker extends Service implements LocationListener {
                                 cOg = location.getBearing();
                                 setReferencePoint();
                                 setDistancias(latitude, longitude);
-
                             }
                         }
                 }
@@ -110,7 +111,7 @@ public class GPSTracker extends Service implements LocationListener {
 
         distX = locationA.distanceTo(locationB);
 
-        if(lngB > longitudeReference){
+        if (lngB > longitudeReference) {
             distX = distX*(-1);
         }
 
@@ -121,7 +122,7 @@ public class GPSTracker extends Service implements LocationListener {
 
         distY = locationA.distanceTo(locationB);
 
-        if(latB < latitudeReference){
+        if (latB < latitudeReference) {
             distY = distY*(-1);
         }
 
@@ -133,14 +134,14 @@ public class GPSTracker extends Service implements LocationListener {
         distTotal = locationA.distanceTo(locationB);
     }
 
-    public void setReferencePoint(){
-        if(!temReferencia) {
-            if((getLatitude() != 0)&&(getLongitude() != 0) ) {
+    public void setReferencePoint() {
+        if (!temReferencia) {
+            if ((getLatitude() != 0)&&(getLongitude() != 0)) {
                 Log.d("latitude " ,latitude+"");
                 latitudeReference = latitude;
                 longitudeReference = longitude;
                 temReferencia = true;
-            }else{
+            } else {
                 temReferencia = false;
             }
         }
@@ -153,8 +154,8 @@ public class GPSTracker extends Service implements LocationListener {
      * Stop using GPS listener
      * Calling this function will stop using GPS in your app
      * */
-    public void stopUsingGPS(){
-        if(locationManager != null){
+    public void stopUsingGPS() {
+        if (locationManager != null) {
             locationManager.removeUpdates(GPSTracker.this);
         }
     }
@@ -162,8 +163,8 @@ public class GPSTracker extends Service implements LocationListener {
     /**
      * Function to get latitude
      * */
-    public double getLatitude(){
-        if(location != null){
+    public double getLatitude() {
+        if (location != null) {
             latitude = location.getLatitude();
         }
 
@@ -174,8 +175,8 @@ public class GPSTracker extends Service implements LocationListener {
     /**
      * Function to get longitude
      * */
-    public double getLongitude(){
-        if(location != null){
+    public double getLongitude() {
+        if (location != null) {
             longitude = location.getLongitude();
         }
 
@@ -187,7 +188,7 @@ public class GPSTracker extends Service implements LocationListener {
      * Function to get altitude
      * */
     public double getAltitude(){
-        if(location != null){
+        if (location != null) {
             altitude = location.getAltitude();
         }
 
@@ -197,8 +198,8 @@ public class GPSTracker extends Service implements LocationListener {
     /**
      * Function to get speed
      * */
-    public double getSpeed(){
-        if(location != null){
+    public double getSpeed() {
+        if (location != null) {
             speed = location.getSpeed();
         }
 
@@ -209,8 +210,8 @@ public class GPSTracker extends Service implements LocationListener {
     /**
      * Function to get cog
      * */
-    public double getCoG(){
-        if(location != null){
+    public double getCoG() {
+        if (location != null) {
             cOg = location.getBearing();
         }
         return cOg;
@@ -218,14 +219,17 @@ public class GPSTracker extends Service implements LocationListener {
 
 
     public double getDistX(){
+
         return distX;
     }
 
     public double getDistY(){
+
         return distY;
     }
 
     public double getDistTotal(){
+
         return distTotal;
     }
 
@@ -234,6 +238,7 @@ public class GPSTracker extends Service implements LocationListener {
      * @return boolean
      * */
     public boolean canGetLocation() {
+
         return this.canGetLocation;
     }
 
