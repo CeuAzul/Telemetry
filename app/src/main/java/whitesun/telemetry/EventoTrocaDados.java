@@ -1,8 +1,5 @@
 package whitesun.telemetry;
 
-/**
- * Created by Avell-G1711 on 27/03/2016.
- */
 public class EventoTrocaDados {
     boolean foco;
     String apelido;
@@ -17,19 +14,23 @@ public class EventoTrocaDados {
     }
 
     public String getApelido() {
+
         return apelido;
     }
 
     public float getValor() {
+
         return valor;
     }
 
     public boolean isFoco() {
+
         return foco;
     }
 
 
     public float getTempoRecebimento() {
+
         return tempoRecebimento;
     }
 

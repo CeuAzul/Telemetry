@@ -7,11 +7,6 @@ import android.media.MediaRecorder;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-/**
- * Created by Avell-G1711 on 03/08/2015.
- */
-
-
 public class NoiseRecorder {
     private static int[] mSampleRates = new int[] { 8000, 11025, 22050, 44100 };
 
@@ -21,28 +16,29 @@ public class NoiseRecorder {
     private MediaRecorder recorder;
 
     public double getNoiseLevel() {
+
         return recorder.getMaxAmplitude();
     }
 
-    public void inicializeSom(){
+    public void inicializeSom() {
         recorder = new MediaRecorder();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         recorder.setOutputFile("/dev/null");
 
-
         try {
             recorder.prepare();
         } catch (IOException e) {
             System.err.println(e);
         }
-// After prepare
+
+        // After prepare
         recorder.start();
     }
 
 
-    public void finalizaSom(){
+    public void finalizaSom() {
         recorder.stop();
         recorder.release();
     }
@@ -58,14 +54,17 @@ public class NoiseRecorder {
                             // check if we can instantiate and have a success
                             AudioRecord recorder = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, rate, channelConfig, audioFormat, bufferSize);
 
-                            if (recorder.getState() == AudioRecord.STATE_INITIALIZED)
+                            if (recorder.getState() == AudioRecord.STATE_INITIALIZED) {
                                 return recorder;
+                            }
                         }
                     } catch (Exception e) {
+                        // Do nothing
                     }
                 }
             }
         }
+
         return null;
     }
 
