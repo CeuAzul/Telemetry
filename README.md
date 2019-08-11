@@ -1,4 +1,4 @@
-# Telemetry: An Android's app for data aquisition
+# Telemetry: An Android app for data acquisition.
 
 ![cover](https://github.com/CeuAzul/Telemetry/blob/master/assets/screen.png) 
 
