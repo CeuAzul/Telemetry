@@ -1,5 +1,4 @@
-# Telemetry
-### An Android's app for data aquisition
+# Telemetry: An Android's app for data aquisition
 
 ![cover](https://github.com/CeuAzul/Telemetry/blob/master/assets/screen.png) 
 
@@ -10,7 +9,7 @@ This paper was published in the 6º Fórum SAE Brasil Aerodesign
 > **Smartphone: Uma alternativa acessível para aquisição de dados em VANTs**<br>
 > **Leonardo Mariga (UFSC)**, Rafael Araújo Lehmkuhl (UFSC), Prof. Amir Antonio Martins Oliveira Jr., Ph.D. (UFSC)
 >
-> **Abstract** *Os smartphones possuem uma grande variedade de sensores, como GPS, giroscópio, acelerômetro, magnetômetro e barômetro, que são utilizados no dia-a-dia para orientação, localização e conforto de seu usuário. Este trabalho descreve o desenvolvimento de um aplicativo para sistema Android a ser utilizado como plataforma de aquisição de dados em VANTs. É feita uma descrição detalhada do software desenvolvido, seguida pela análise de dados obtidos em testes. Avalia-se também o desempenho do sistema, comparando-o a outros sistemas de aquisição em termos de precisão e velocidade. Por fim é mostrado resultados da equipe Céu Azul Aeronaves na utilização deste sistema como auxilio no projeto de suas aeronaves.* (traduzir depois)
+> **Abstract** *Smartphones have a wide range of sensors, such as GPS, gyroscope, accelerometer, magnetometer and barometer, which are used on a daily basis for orientation, location and comfort of its user. This paper describes the development of an Android app that serves as an UAV data acquisition system. The paper shows a detailed description of the developed software and analysis of experimental data. It also evaluates system performance by comparing it to other acquisition systems in terms of accuracy and speed. Finally, it shows results of Céu Azul team using this app as an aid for designing aircrafts.*
 
 
 
