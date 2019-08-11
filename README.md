@@ -1,13 +1,11 @@
 # Telemetry
-### : Android's app for data aquisition
+### An Android's app for data aquisition
 
-<div align="center">
-  <img src="./assets/screen.png">
-</div>
+![cover](https://github.com/CeuAzul/Telemetry/blob/master/assets/screen.png) 
 
-### [Paper](https://arxiv.org/abs/1907.10830) 
+### [Paper (portuguese)](https://github.com/CeuAzul/Telemetry/blob/master/assets/smartphone_paper.pdf) 
 
-The results of the paper came from the **Tensorflow code**
+This paper was published in the 6º Fórum SAE Brasil Aerodesign
 
 > **Smartphone: Uma alternativa acessível para aquisição de dados em VANTs**<br>
 > **Leonardo Mariga (UFSC)**, Rafael Araújo Lehmkuhl (UFSC), Prof. Amir Antonio Martins Oliveira Jr., Ph.D. (UFSC)
