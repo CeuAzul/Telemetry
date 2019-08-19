@@ -22,12 +22,19 @@ This paper was published in the 6º Fórum SAE Brasil Aerodesign
 
 ## How does it work?
 
-Telemetry access sensors inside a smartphone enabling you to log data from all of them. Most smarphones have accelerometers, gyroscopes, GPS, light sensor, temperature sensor, magnetometers and many others (It depends on the smarphone model). When the log begins, it uses the current GPS coordinates as a home location, calculating the relative position in the log file. The high-level working scheme is shown below:
+Telemetry access sensors inside a smartphone enabling you to log data from all of them. Most smarphones have accelerometers, gyroscopes, GPS, light sensor, temperature sensor, magnetometers and many others. When the log begins, it uses the current GPS coordinates as a home location, calculating the relative position in the log file. The high-level block diagram is shown below: 
 
 
 ![wscheme](https://github.com/CeuAzul/Telemetry/blob/master/assets/howorks.png) 
 
-##  Comparison of [T2015](https://github.com/CeuAzul/Preludio) data acquisition platform with a Galaxy S.
+## Are smartphones good enough for data aquisition?
+
+For many application, yes! Most sensors available in smartphones have similar characteristics of resolution, range and speed to the ones used in dedicated acquisition platforms :grin:. Furthermore, the processing power of current smartphones are usually higher then many platforms allowing the user to acquire data faster, or use more complex algorithims to filter or fuse data. 
+
+![](https://github.com/CeuAzul/Telemetry/blob/master/assets/platform.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/models.png)
+
+## Tests
+Comparison of [T2015](https://github.com/CeuAzul/Preludio) data acquisition platform with a Galaxy S in flight tests with UAVs from Céu Azul.
 
 
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/accy.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/speed.png)
