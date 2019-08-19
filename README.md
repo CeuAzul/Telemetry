@@ -29,12 +29,14 @@ Telemetry access sensors inside a smartphone enabling you to log data from all o
 
 ## Are smartphones good enough for data aquisition?
 
-For many application, yes! Most sensors available in smartphones have similar characteristics of resolution, range and speed to the ones used in dedicated acquisition platforms :grin:. Furthermore, the processing power of current smartphones are usually higher then many platforms allowing the user to acquire data faster, or use more complex algorithims to filter or fuse data. 
+For many application, **yes!** Most sensors available in smartphones have similar characteristics of resolution, range and speed to the ones used in dedicated acquisition platforms :grin:. Furthermore, the processing power of smartphones are usually higher then many platforms allowing the user to acquire data faster, or use more complex algorithims to filter and fuse data. 
 
+Smartphone vs dedicated acquisition systems             |  Quality in smartphones sensors
+:-------------------------:|:-------------------------:
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/platform.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/models.png)
 
 ## Tests
-Comparison of [T2015](https://github.com/CeuAzul/Preludio) data acquisition platform with a Galaxy S in flight tests with UAVs from Céu Azul.
+Flight tests using both [T2015](https://github.com/CeuAzul/Preludio) data acquisition platform and a Galaxy S inside UAVs from Céu Azul.
 
 
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/accy.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/speed.png)
