@@ -1,10 +1,10 @@
 # Telemetry
-## An Android app for data acquisition and sensor logging.
+### An Android app for data acquisition and sensor logging.
 
 ![cover](https://github.com/CeuAzul/Telemetry/blob/master/assets/screen.png) 
 
 
-### [Paper (portuguese)](https://github.com/CeuAzul/Telemetry/blob/master/assets/smartphone_paper.pdf) 
+### [Paper (portuguese)](https://github.com/CeuAzul/Telemetry/blob/master/assets/smartphone_paper.pdf)  | [Google Play link](https://play.google.com/store/apps/details?id=whitesun.telemetry)
 
 This paper was published in the 6º Fórum SAE Brasil Aerodesign
 
@@ -31,7 +31,7 @@ Telemetry access sensors inside a smartphone enabling you to log data from all o
 
 For many application, **yes!** Most sensors available in smartphones have similar characteristics of resolution, range and speed to the ones used in dedicated acquisition platforms :grin:. Furthermore, the processing power of smartphones are usually higher then many platforms allowing the user to acquire data faster, or use more complex algorithims to filter and fuse data. 
 
-Smartphone vs dedicated acquisition systems             |  Quality in smartphones sensors
+Smartphone vs dedicated acquisition systems             |  Quality of smartphone
 :-------------------------:|:-------------------------:
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/platform.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/models.png)
 
@@ -43,3 +43,11 @@ Flight tests using both [T2015](https://github.com/CeuAzul/Preludio) data acquis
 :-------------------------:|:-------------------------:
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/trajec.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/attitude.png)
 
+## Contact
+Developed with :heart: by [Leonardo Mariga](https://github.com/leomariga)
+*leomariga@gmail.com*
+
+**Céu Azul Aeronaves**
+*ceuazulufsc@gmail.com*
+
+Special thanks to: Rafael Araújo Lehmkuhl, Lucas Andriolli and all Céu Azul Team. 
