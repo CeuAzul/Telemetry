@@ -1,7 +1,18 @@
 # Telemetry
 ## An Android app for data acquisition and sensor logging.
 
-![cover](https://github.com/CeuAzul/Telemetry/blob/master/assets/screen.png) 
+
+Accelerometer and speed comparison of [T2015](https://github.com/CeuAzul/Preludio) data acquisition platform and a Galaxy S
+:-------------------------:|:-------------------------:
+![](https://github.com/CeuAzul/Telemetry/blob/master/assets/accy.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/speed.png)
+
+
+GPS trajectory from Galaxy S             |  UAV attitude measurement using Galaxy S
+:-------------------------:|:-------------------------:
+![](https://github.com/CeuAzul/Telemetry/blob/master/assets/trajec.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/attitude.png)
+
+
+
 
 ### [Paper (portuguese)](https://github.com/CeuAzul/Telemetry/blob/master/assets/smartphone_paper.pdf) 
 
@@ -13,16 +24,7 @@ This paper was published in the 6º Fórum SAE Brasil Aerodesign
 > **Abstract:** *Smartphones have a wide range of sensors, such as GPS, gyroscope, accelerometer, magnetometer and barometer, which are used on a daily basis for orientation, location and comfort of its user. This paper describes the development of an Android app that serves as an UAV data acquisition system. The paper shows a detailed description of the developed software and analysis of experimental data. It also evaluates system performance by comparing it to other acquisition systems in terms of accuracy and speed. Finally, it shows results of Céu Azul team using this app as an aid for designing aircrafts.*
 
 
-
-
-Comparing accelerometer data from T2015 platform and Galaxy S            |  Comparing speed from T2015 and Galaxy S GPS
-:-------------------------:|:-------------------------:
-![](https://github.com/CeuAzul/Telemetry/blob/master/assets/accy.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/speed.png)
-
-
-GPS trajectory from Galaxy S             |  UAV attitude measurement using Galaxy S
-:-------------------------:|:-------------------------:
-![](https://github.com/CeuAzul/Telemetry/blob/master/assets/trajec.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/attitude.png)
+![cover](https://github.com/CeuAzul/Telemetry/blob/master/assets/screen.png) 
 
 
 ## How to contribute
