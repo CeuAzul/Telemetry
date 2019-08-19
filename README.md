@@ -3,12 +3,12 @@
 
 Comparison of [T2015](https://github.com/CeuAzul/Preludio) data acquisition platform and a Galaxy S
 
-Acceleration data            |  Speed data
+
 :-------------------------:|:-------------------------:
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/accy.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/speed.png)
 
 
-GPS trajectory using Galaxy S             |  Attitude measurement using Galaxy S
+
 :-------------------------:|:-------------------------:
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/trajec.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/attitude.png)
 
