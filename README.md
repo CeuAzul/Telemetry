@@ -22,7 +22,7 @@ This paper was published in the 6º Fórum SAE Brasil Aerodesign
 
 ## How does it work?
 
-Telemetry access sensors inside a smartphone enabling you to log data from all of them. Most smarphones have accelerometers, gyroscopes, GPS, light sensor, temperature sensor, magnetometers and many others. When the log begins, it uses the current GPS coordinates as a home location, calculating the relative position in the log file. The high-level block diagram is shown below: 
+Telemetry access sensors inside a smartphone enabling you to log data from all of them. Most smarphones have accelerometers, gyroscopes, GPS, light sensor, temperature sensor, magnetometers etc. When the log begins, it uses the first GPS coordinates as a home location, calculating the relative position in the log file. The high-level block diagram is shown below: 
 
 
 ![wscheme](https://github.com/CeuAzul/Telemetry/blob/master/assets/howorks.png) 
@@ -45,9 +45,11 @@ Flight tests using both [T2015](https://github.com/CeuAzul/Preludio) data acquis
 
 ## Contact
 Developed with :heart: by [Leonardo Mariga](https://github.com/leomariga)
+
 *leomariga@gmail.com*
 
 **Céu Azul Aeronaves**
+
 *ceuazulufsc@gmail.com*
 
-Special thanks to: Rafael Araújo Lehmkuhl, Lucas Andriolli and all Céu Azul Team. 
+**Special thanks to:** Rafael Araújo Lehmkuhl, Lucas Andriolli and Céu Azul Team. 
