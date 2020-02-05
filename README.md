@@ -31,7 +31,7 @@ Telemetry access sensors inside a smartphone enabling you to log data from all o
 
 For many application, **yes!** Most sensors available in smartphones have similar characteristics of resolution, range and speed to the ones used in dedicated acquisition platforms :grin:. Furthermore, the processing power of smartphones are usually higher then many platforms allowing the user to acquire data faster, or use more complex algorithims to filter and fuse data. 
 
-Smartphone vs dedicated acquisition systems             |  Quality of smartphone
+Smartphone vs dedicated acquisition systems             |  Quality of smartphones
 :-------------------------:|:-------------------------:
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/platform.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/models.png)
 
@@ -44,12 +44,6 @@ Flight tests using both [T2015](https://github.com/CeuAzul/Preludio) data acquis
 ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/trajec.png)  |  ![](https://github.com/CeuAzul/Telemetry/blob/master/assets/attitude.png)
 
 ## Contact
-Developed with :heart: by [Leonardo Mariga](https://github.com/leomariga)
-
-*leomariga@gmail.com*
-
-**Céu Azul Aeronaves**
-
-*ceuazulufsc@gmail.com*
+Developed with :heart: by [Leonardo Mariga](https://github.com/leomariga) (leomariga@gmail.com)
 
 **Special thanks to:** Rafael Araújo Lehmkuhl, Lucas Andriolli and Céu Azul Team. 
